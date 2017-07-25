@@ -7,8 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-Here are the list Todos:
-
+Here are the list of ${name}'s Todos:
 ${todos}
+
+<br>
+
+<a href="/add-todo">Add Todo</a>
+
 </body>
 </html>
