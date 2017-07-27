@@ -1,18 +1,44 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+
+<title>Todo's for ${name}</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	    		rel="stylesheet">
 </head>
 <body>
-Here are the list of ${name}'s Todos:
-${todos}
+	<div class="container">
+	<table class="table table-striped">
+		<caption>Your Todos are</caption>
+		<thead>
+			<tr>
+				<th>Description</th>
+				<th>Target Date</th>
+				<th>Is it Done?</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${todos}" var="todo">
+				<tr>
+					<td>${todo.desc}</td>
+					<td>${todo.targetDate}</td>
+					<td>${todo.done}</td>
+					<td><a class="btn btn-warning" type="button" href="/delete-todo?id=${todo.id}"/>Delete</td>
 
-<br>
+				</tr>
+			</c:forEach>
+		</tbody>
 
-<a href="/add-todo">Add Todo</a>
+	</table>
+</div>
+<div>
+	<a class="button" href="/add-todo">Add Todo</a>
+</div>
+
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>
