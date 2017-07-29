@@ -16,6 +16,7 @@
 				<th>Description</th>
 				<th>Target Date</th>
 				<th>Is it Done?</th>
+				<th></th>
 				<th>Delete</th>
 			</tr>
 		</thead>
@@ -25,6 +26,7 @@
 					<td>${todo.desc}</td>
 					<td>${todo.targetDate}</td>
 					<td>${todo.done}</td>
+					<td><a class="btn btn-success" type="button" href="/update-todo?id=${todo.id}"/>Update</td>
 					<td><a class="btn btn-warning" type="button" href="/delete-todo?id=${todo.id}"/>Delete</td>
 
 				</tr>
